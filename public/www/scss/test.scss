@@ -1,0 +1,31 @@
+@import "val";
+@import "mixins";
+
+.wrap {
+  position: relative;
+  // mixin 사용
+  @include flex-center;
+  // 변수 사용하기
+  width: $width-screen;
+  .header {
+    // mixin 사용
+    @include flex-center;
+    // 변수 사용하기
+    width: $width-screen;
+    .inner {
+      @include border-fn(red);
+      height: 100px;
+      // 변수 사용하기
+      width: $pc-w;
+    }
+  }
+  .main {
+    @include border-fn(#ffffff);
+    // 변수 사용하기
+    width: $width-screen;
+  }
+  .footer {
+    // 변수 사용하기
+    width: $width-screen;
+  }
+}
